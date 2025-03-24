@@ -17,7 +17,7 @@ public class ProductServiceTest {
 
     }
     @BeforeEach
-    protected void setUp() throws Exception {
+    protected void setUp() {
         products= List.of(
                 new Product("P001", "Laptop", "Electronics", new BigDecimal("999.99"), 10),
                 new Product("P002", "Smartphone", "Electronics", new BigDecimal("699.99"), 20),
