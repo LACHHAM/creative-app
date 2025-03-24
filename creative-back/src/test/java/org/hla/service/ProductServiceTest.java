@@ -1,20 +1,23 @@
 package org.hla.service;
 
-import junit.framework.TestCase;
 import org.hla.model.Product;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-public class ProductServiceTest extends TestCase {
+import static org.junit.jupiter.api.Assertions.*;
+
+public class ProductServiceTest {
 
     private List<Product> products;
     private ProductService productService;
     public ProductServiceTest(){
 
     }
+    @BeforeEach
     protected void setUp() throws Exception {
-        super.setUp();
         products= List.of(
                 new Product("P001", "Laptop", "Electronics", new BigDecimal("999.99"), 10),
                 new Product("P002", "Smartphone", "Electronics", new BigDecimal("699.99"), 20),
@@ -26,6 +29,7 @@ public class ProductServiceTest extends TestCase {
     }
 
 
+    @Test
     public void testFindAllProducts_ShouldReturnAllProducts() {
         productService.setProductList(products);
         List<Product> result = productService.findAllProducts();
@@ -34,11 +38,8 @@ public class ProductServiceTest extends TestCase {
         assertTrue(result.containsAll(products));
     }
 
+    @Test
     public void testFindProductByCategory_ShoudThrowException() {
-        try {
-            productService.findProductsByCategory("nean");
-        } catch (Exception e) {
-            assertEquals("aucun produit trouvé pour cette catégorie", e.getMessage());
-        }
+        assertThrows(NullPointerException.class, () -> productService.findAllProducts());
     }
 }

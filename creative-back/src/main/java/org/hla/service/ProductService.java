@@ -3,6 +3,7 @@ package org.hla.service;
 import org.hla.model.Product;
 
 import java.util.List;
+import java.util.Optional;
 
 public class ProductService {
 
@@ -14,11 +15,6 @@ public class ProductService {
     }
 
     public List<Product> findAllProducts() {
-        return productList;
-    }
-
-
-    public List<Product> findProductsByCategory(String category) throws Exception{
-        throw new Exception("aucun produit trouvé pour cette catégorie");
+        return Optional.ofNullable(productList).orElseThrow(() -> new NullPointerException("La liste des produits est null"));
     }
 }
