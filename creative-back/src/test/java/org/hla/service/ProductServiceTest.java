@@ -38,7 +38,7 @@ public class ProductServiceTest extends TestCase {
         try {
             productService.findProductsByCategory("nean");
         } catch (Exception e) {
-            assertEquals("aucun produit trouvé pour cette catégory", e.getMessage());
+            assertEquals("aucun produit trouvé pour cette catégorie", e.getMessage());
         }
     }
 }

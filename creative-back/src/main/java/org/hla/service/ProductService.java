@@ -19,6 +19,6 @@ public class ProductService {
 
 
     public List<Product> findProductsByCategory(String category) throws Exception{
-        throw new Exception("aucun produit trouvé pour cette catégory");
+        throw new Exception("aucun produit trouvé pour cette catégorie");
     }
 }
