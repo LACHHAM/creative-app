@@ -4,12 +4,11 @@ import junit.framework.TestCase;
 import org.hla.model.Product;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.List;
 
 public class ProductServiceTest extends TestCase {
 
-    private List<Product> products;
+    private final List<Product> products;
     private ProductService productService;
     public ProductServiceTest(){
          products= List.of(
