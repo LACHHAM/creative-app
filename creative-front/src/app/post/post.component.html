@@ -1,15 +1,15 @@
 
 <div>
     <h1>Liste des Posts</h1>
-  
+
     @if (error) {
       <div>{{ error }}</div>
     }
-  
+
     @if (!error) {
       <div>
         @for (post of posts; track post.id) {
-          <div>
+          <article>
             <span>id : {{ post.id }}</span>
             <br/>
             <span>user : {{ post.userId }}</span>
@@ -17,16 +17,11 @@
             <span>{{ post.title }}</span>
             <br/>
             <span>{{ post.body }}</span>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-        </div>
+          </article>
         } @empty {
           <p>Aucun post à afficher</p>
         }
       </div>
     }
   </div>
-  
-  
+
